@@ -132,6 +132,7 @@ function createWindow(
 	nativeTheme.themeSource = "dark";
 	// Create the browser window.
 	const win = new BrowserWindow({
+		frame: false,
 		width: 550,
 		height: 420,
 		minWidth: 565,

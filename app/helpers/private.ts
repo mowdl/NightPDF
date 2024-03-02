@@ -54,8 +54,8 @@ function setupTab(tab: Tab, tabCssKey: Map<Tab, string>, debug = false) {
 		content
 			?.insertCSS(`
 			:root {
-				--dark-scrollbar-color: #1e1e1e;
-				--dark-scrollbar-bg-color: #444444;
+				--dark-scrollbar-color: #000;
+				--dark-scrollbar-bg-color: #000;
 			}
 			#viewerContainer {
 				scrollbar-color: var(--dark-scrollbar-color) var(--dark-scrollbar-bg-color) !important;

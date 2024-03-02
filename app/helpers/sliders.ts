@@ -15,14 +15,6 @@ function handlePresetChange(
 	const extraBrightness = _extraBrightnessSliderElement.noUiSlider;
 
 	switch (preset) {
-		case "default":
-			brightness.set(7);
-			grayness.set(95);
-			inversion.set(95);
-			sepia.set(55);
-			hue.set(180);
-			extraBrightness.set(0);
-			break;
 		case "original":
 			brightness.set(0);
 			grayness.set(0);
@@ -48,7 +40,13 @@ function handlePresetChange(
 			extraBrightness.set(-30);
 			break;
 		default:
-			brightness.set(9);
+			brightness.set(0);
+			grayness.set(0);
+			inversion.set(100);
+			sepia.set(0);
+			hue.set(180);
+			extraBrightness.set(0);
+			break;
 	}
 
 	console.debug(preset, "changed");
