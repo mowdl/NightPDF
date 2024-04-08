@@ -413,39 +413,39 @@ app.whenReady().then(() => {
 	} else {
 		createWindow();
 	}
-
-	globalShortcut.register("alt+CommandOrControl+t", () => {
-		console.log(NOTIFICATION_BODY);
-		new Notification({
-			title: NOTIFICATION_TITLE,
-			body: NOTIFICATION_BODY,
-		}).show();
-	});
-
-	for (const action of keybinds.actions) {
-		globalShortcut.registerAll(
-			keybinds.getActionKeybindsTrigger(action),
-			() => {
-				const focusedWin = BrowserWindow.getFocusedWindow();
-				if (focusedWin) {
-					focusedWin.webContents.send(
-						keybinds.getAction(action),
-						keybinds.getActionData(action),
-					);
-				}
-			},
-		);
-	}
-
-	// register Ctrl+1 to Ctrl+9 shortcuts
-	for (let i = 1; i <= 9; i++) {
-		globalShortcut.register(`CommandOrControl+${i}`, () => {
-			const focusedWin = BrowserWindow.getFocusedWindow();
-			if (focusedWin) {
-				focusedWin.webContents.send("switch-tab", i);
-			}
-		});
-	}
+	//
+	// globalShortcut.register("alt+CommandOrControl+t", () => {
+	// 	console.log(NOTIFICATION_BODY);
+	// 	new Notification({
+	// 		title: NOTIFICATION_TITLE,
+	// 		body: NOTIFICATION_BODY,
+	// 	}).show();
+	// });
+	//
+	// for (const action of keybinds.actions) {
+	// 	globalShortcut.registerAll(
+	// 		keybinds.getActionKeybindsTrigger(action),
+	// 		() => {
+	// 			const focusedWin = BrowserWindow.getFocusedWindow();
+	// 			if (focusedWin) {
+	// 				focusedWin.webContents.send(
+	// 					keybinds.getAction(action),
+	// 					keybinds.getActionData(action),
+	// 				);
+	// 			}
+	// 		},
+	// 	);
+	// }
+	//
+	// // register Ctrl+1 to Ctrl+9 shortcuts
+	// for (let i = 1; i <= 9; i++) {
+	// 	globalShortcut.register(`CommandOrControl+${i}`, () => {
+	// 		const focusedWin = BrowserWindow.getFocusedWindow();
+	// 		if (focusedWin) {
+	// 			focusedWin.webContents.send("switch-tab", i);
+	// 		}
+	// 	});
+	// }
 });
 
 app.on("window-all-closed", () => {
